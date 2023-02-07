@@ -2,6 +2,9 @@
 from common.np import *  # import numpy as np
 from common.config import GPU
 from common.functions import softmax, cross_entropy_error
+if GPU:
+    import cupyx
+
 
 
 class MatMul:
@@ -164,7 +167,8 @@ class Embedding:
         dW, = self.grads
         dW[...] = 0
         if GPU:
-            np.scatter_add(dW, self.idx, dout)
+            # np.scatter_add(dW, self.idx, dout)
+            cupyx.scatter_add(dW, self.idx, dout)
         else:
             np.add.at(dW, self.idx, dout)
         return None
