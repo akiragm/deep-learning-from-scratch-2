@@ -11,7 +11,7 @@ from common.util import preprocess2
 import pickle
 
 
-path = 'C:\Git\DeepLearnng\makecorpus\mainPD_modulePD_TEST .txt'
+path = 'D:\GItHub\DeepLearnng\detatxt\mainPD.txt'
 
 ##読み込み用データの作成
 f = open(path, 'r', encoding="utf-8")
