@@ -2,7 +2,7 @@ import pickle
 import numpy as np
 
 # pickleファイルを読み込む
-with (open('D:\GItHub\deep-learning-from-scratch-2\ch04', "rb")) as f:
+with (open('D:\GItHub\deep-learning-from-scratch-2\ch04\cbow_params.pkl', "rb")) as f:
     params = pickle.load(f)
     
 #CBOWで学習した分散表現を取得

@@ -34,3 +34,11 @@ def cross_entropy_error(y, t):
     batch_size = y.shape[0]
 
     return -np.sum(np.log(y[np.arange(batch_size), t] + 1e-7)) / batch_size
+
+
+def cbow_objective(window_size, hidden_size):
+    model = CBOW(vocab_size, int(hidden_size), int(window_size), corpus)
+    optimizer = Adam()
+    trainer = Trainer(model, optimizer)
+    trainer.fit(contexts, target, epochs=5, batch_size=batch_size)
+    return -trainer.plot(skip_train_loss=True)[-1]
