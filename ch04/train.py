@@ -4,7 +4,7 @@ sys.path.append('..')
 from common import config
 # GPUで実行する場合は、下記のコメントアウトを消去（要cupy）
 # ===============================================
-config.GPU = True
+#config.GPU = True
 # ===============================================
 from common.np import *
 import pickle
@@ -18,9 +18,9 @@ from dataset import ptb
 
 # ハイパーパラメータの設定
 window_size = 2
-hidden_size = 100
-batch_size = 100
-max_epoch = 10
+hidden_size = 10
+batch_size = 1000
+max_epoch = 1
 
 # データの読み込み
 corpus, word_to_id, id_to_word = ptb.load_data('train')
